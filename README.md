@@ -1,7 +1,7 @@
 ## Hi there 👋
 I am a B.S. in CS from Curitiba, Brazil.
 
-I like music, systems, philosophy, and Python.
+I like music, psychology, philosophy, systems and Python.
 
 ![Top Languages](./profile/top-langs.svg)
 
