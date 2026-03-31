@@ -1,21 +1,32 @@
-name: Update Language Statistics
+name: Update README laguages stats card
 
 on:
   schedule:
-    - cron: "0 0 * * *"
+    - cron: "0 0 * * *" # Runs once daily at midnight
   workflow_dispatch:
 
-permissions:
-  contents: write
-
 jobs:
-  update-stats:
+  build:
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
     steps:
-      - uses: actions/checkout@v4
-      - uses: StefVuck/Github-Language-Stats@v1.1.0
+      - uses: actions/checkout@v6
+
+      - name: Generate top languages card
+        uses: readme-tools/github-readme-stats-action@v1
         with:
-          github_token: ${{ secrets.STATS_TOKEN }}
-          visualization_types: "leaderboard"
-          output_path: "stats"
-          dark_mode: true
+          card: top-langs
+          options: username=${{ github.repository_owner }}&layout=compact&langs_count=6&theme=vision-friendly-dark
+          path: profile/top-langs.svg
+          token: ${{ secrets.STATS_TOKEN }}
+
+      - name: Commit cards
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add profile/*.svg
+          git commit -m "Update README cards" || exit 0
+          git push

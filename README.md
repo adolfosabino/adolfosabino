@@ -1,12 +1,9 @@
 ## Hi there 👋
+I am a B.S. in CS from Curitiba, Brazil.
 
-![Language Stats](stats/leaderboard_by_lines.png)
-![Language Stats](stats/leaderboard_by_repos.png)
-![Language Stats](stats/leaderboard_by_weighted.png)
+I like music, systems, philosophy, and Python.
 
-![Stats](./profile/stats.svg)
 ![Top Languages](./profile/top-langs.svg)
-![Pinned](./profile/pin-readme-tools-github-readme-stats.svg)
 
 <!--
 **adolfosabino/adolfosabino** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
